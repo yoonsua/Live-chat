@@ -3,7 +3,7 @@ var socket = io()
 // 접속 되었을 때 실행
 socket.on('connect', function() { // on :  수신
   // 이름 입력
-  var name = prompt('반갑습니다', '')
+  var name = prompt('Nodejs_Chat에 오신 걸 환영합니다. 이름을 입력해주세요.', '')
 
   // 이름이 빈칸인 경우
   if(!name) {
@@ -18,7 +18,7 @@ socket.on('update', function(data) {
   var chat = document.getElementById('chat')
 
   var message = document.createElement('div')
-  var node = document.createTextNode(`${data.name}: ${data.message}`)
+  var node = document.createTextNode(`${data.message}`)
   var className = ''
 
   switch(data.type) {
